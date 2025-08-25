@@ -98,8 +98,8 @@ exports.getOrdersKpi = async (req, res) => {
         {
           $group: {
             _id: {
-              month: { $month: "$createdAt" },
-              year: { $year: "$createdAt" }
+              month: { $month: "$creationDate" },
+              year: { $year: "$creationDate" }
             },
             totalCA: { $sum: "$price" },
             countOrders: { $sum: 1 }
