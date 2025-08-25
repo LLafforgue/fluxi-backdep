@@ -85,5 +85,9 @@ router.post('/login', async (req, res) => {
   
 });
 
-
+router.get('/', async (req,res)=>{
+  const user = await User.find();
+  if (!user[0]) return console.log(user);
+  res.json({reuslt:true, user});
+})
 module.exports = router;
